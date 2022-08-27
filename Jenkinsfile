@@ -7,11 +7,11 @@ pipeline{
                 git branch: 'test', url: 'https://github.com/sandeep2523/final.git'
             }
 		}
-		stage("DOCKER LOGIN"){
-	                 steps{
-				sh 'docker LOGIN -u="sandeep2523" -p="Sandeep@2523"'
-			}
-		}
+		stage ('DOCKER Login') {
+           steps {
+               sh 'docker login -u="sandeep2523" -p="Sandeep@2523"'
+            }
+        }
 		stage("DOCKER BUILD"){
 			steps{
 				echo "BUILD stage"
