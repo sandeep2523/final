@@ -7,6 +7,11 @@ pipeline{
                 git branch: 'test', url: 'https://github.com/sandeep2523/final.git'
             }
 		}
+		stage("DOCKER LOGIN"){
+	                 steps{
+				sh 'docker LOGIN -u="sandeep2523" -p="Sandeep@2523"'
+			}
+		}
 		stage("DOCKER BUILD"){
 			steps{
 				echo "BUILD stage"
@@ -16,11 +21,16 @@ pipeline{
 				'''
 			}
 		}
-		stage("DOCKER PUSH"){
+		stage("DOCKER TAG"){
 	                 steps{
 				sh 'docker image ls'
-				sh 'docker tag sandeep2523 sandeep2523/jenkins:2.10'
-				sh 'docker push sandeep2523/jenkins:2.10'
+				sh 'docker tag sandeep2523 sandeep2523/jenkins:3.10'
+			}
+		}
+		stage("DOCKER PUSH"){
+	                 steps{
+			        sh 'docker image ls'
+				sh 'docker push sandeep2523/jenkins:3.10'
 				echo "Docker image pushed to docker hub successfuly"
 			}
 		}
