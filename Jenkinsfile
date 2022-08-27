@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage("git clone"){
 			steps {
-                git branch: 'test', url: 'https://github.com/sandeep2523/final'
+                git branch: 'test', url: 'https://github.com/sandeep2523/final.git'
             }
 		}
 		stage("DOCKER BUILD"){
