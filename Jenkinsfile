@@ -6,6 +6,7 @@ pipeline{
 			steps{
 				echo "BUILD stage"
 				sh ''' 
+					ls
 					cd /var/lib/jenkins/workspace/final
 					docker build -t sandeep2523/jenkins:1.10 .
 				'''
