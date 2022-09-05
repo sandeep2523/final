@@ -29,7 +29,7 @@ pipeline{
 		stage("Docker-run"){
 			steps{
 				echo "Running container"
-				sh 'docker run -it -d -p 8045:8080 --name sandeep-tomcat4 sandeep2523/jenkins:5.10'
+				sh 'docker run -it -d -p 8045:8080 --name sandeep-tomcat5 sandeep2523/jenkins:5.10'
 				sh 'docker ps'
 				
 			}
