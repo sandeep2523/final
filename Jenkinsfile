@@ -6,7 +6,7 @@ pipeline{
 			steps{
 				echo "BUILD stage"
 				sh ''' 
-					ls
+					pwd
 					cd /var/lib/jenkins/workspace/test
 					docker build -t sandeep1234 .
 				'''
